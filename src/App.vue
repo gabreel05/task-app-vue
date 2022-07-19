@@ -3,7 +3,7 @@
     <AppHeader />
     <button @click="addTask" type="button">Add Task</button>
     <AddTaskForm :isShown="isShown" />
-    <AppTasks :tasks="tasks" />
+    <AppTasks :tasks="tasks" :isShown="!isShown" />
   </div>
 </template>
 

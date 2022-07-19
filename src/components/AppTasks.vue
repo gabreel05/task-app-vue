@@ -1,5 +1,5 @@
 <template>
-  <div id="app__tasks">
+  <div v-show="isShown" id="app__tasks">
     <ul>
       <li v-for="task in tasks" v-bind:key="task.id">
         <input type="checkbox" v-model="task.completed" />
@@ -15,6 +15,10 @@ export default {
   props: {
     tasks: {
       type: Array,
+      required: true,
+    },
+    isShown: {
+      type: Boolean,
       required: true,
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <button @click="click">{{ data }}</button>
+  <button @click="clickButton">{{ data }}</button>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
       type: String,
       required: true,
     },
-    click: {
+    clickButton: {
       type: Function,
       required: true,
     },

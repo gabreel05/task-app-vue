@@ -3,7 +3,7 @@
     <div id="add_task__form__items">
       <h1>Add Task</h1>
       <input type="text" placeholder="Task Title" />
-      <AppButton :textButton="textButton" />
+      <AppButton :textButton="textButton" :clickButton="addTask" />
     </div>
   </div>
 </template>
@@ -23,6 +23,9 @@ export default {
     return {
       textButton: "Add",
     };
+  },
+  methods: {
+    addTask() {},
   },
 };
 </script>

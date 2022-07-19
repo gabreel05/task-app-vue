@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AppHeader />
-    <AppButton :textButton="textButton" :click="addTask" />
+    <AppButton :textButton="textButton" :clickButton="addTask" />
     <AddTaskForm :isShown="isShown" />
     <AppTasks :tasks="tasks" :isShown="!isShown" />
   </div>

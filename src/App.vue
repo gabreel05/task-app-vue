@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AppHeader />
-    <button type="button">Add Task</button>
+    <button @click="addTask" type="button">Add Task</button>
     <AppTasks :tasks="tasks" />
   </div>
 </template>
@@ -27,6 +27,15 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    addTask() {
+      this.tasks.push({
+        id: 3,
+        title: "Read the Bible",
+        completed: false,
+      });
+    },
   },
 };
 </script>

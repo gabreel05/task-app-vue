@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AppHeader />
-    <button @click="addTask" type="button">Add Task</button>
+    <AppButton :textButton="textButton" :click="addTask" />
     <AddTaskForm :isShown="isShown" />
     <AppTasks :tasks="tasks" :isShown="!isShown" />
   </div>
@@ -9,10 +9,11 @@
 
 <script>
 import AddTaskForm from "./components/AddTaskForm.vue";
+import AppButton from "./components/AppButton.vue";
 import AppHeader from "./components/AppHeader.vue";
 import AppTasks from "./components/AppTasks.vue";
 export default {
-  components: { AppHeader, AppTasks, AddTaskForm },
+  components: { AppHeader, AppTasks, AddTaskForm, AppButton },
   name: "App",
   data() {
     return {
@@ -29,6 +30,7 @@ export default {
         },
       ],
       isShown: false,
+      textButton: "Add Task",
     };
   },
   methods: {
@@ -46,24 +48,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#app button {
-  border: none;
-  outline: none;
-  background-color: #66cc;
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #eee;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-#app button:hover {
-  background-color: #eee;
-  color: #777;
-  cursor: pointer;
 }
 </style>

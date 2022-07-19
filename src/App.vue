@@ -2,15 +2,17 @@
   <div id="app">
     <AppHeader />
     <button @click="addTask" type="button">Add Task</button>
+    <AddTaskForm :isShown="false" />
     <AppTasks :tasks="tasks" />
   </div>
 </template>
 
 <script>
+import AddTaskForm from "./components/AddTaskForm.vue";
 import AppHeader from "./components/AppHeader.vue";
 import AppTasks from "./components/AppTasks.vue";
 export default {
-  components: { AppHeader, AppTasks },
+  components: { AppHeader, AppTasks, AddTaskForm },
   name: "App",
   data() {
     return {

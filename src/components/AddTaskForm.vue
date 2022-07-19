@@ -1,11 +1,5 @@
 <template>
-  <div
-    :style="{
-      display: isShown ? 'block' : 'none',
-      visibility: isShown ? 'visible' : 'hidden',
-    }"
-    id="add_task__form"
-  >
+  <div v-show="isShown" id="add_task__form">
     <h1>Add Task</h1>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div id="app">
     <AppHeader />
     <button @click="addTask" type="button">Add Task</button>
-    <AddTaskForm :isShown="false" />
+    <AddTaskForm :isShown="isShown" />
     <AppTasks :tasks="tasks" />
   </div>
 </template>
@@ -28,15 +28,12 @@ export default {
           completed: false,
         },
       ],
+      isShown: false,
     };
   },
   methods: {
     addTask() {
-      this.tasks.push({
-        id: 3,
-        title: "Read the Bible",
-        completed: false,
-      });
+      this.isShown = !this.isShown;
     },
   },
 };

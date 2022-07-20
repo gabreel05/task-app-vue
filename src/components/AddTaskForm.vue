@@ -2,7 +2,7 @@
   <div v-show="isShown" id="add_task__form">
     <div id="add_task__form__items">
       <h1>Add Task</h1>
-      <input type="text" placeholder="Task Title" />
+      <input type="text" placeholder="Task Title" v-model="title" />
       <AppButton :textButton="textButton" :clickButton="addTask" />
     </div>
   </div>
@@ -18,14 +18,26 @@ export default {
       type: Boolean,
       required: true,
     },
+    taskList: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
       textButton: "Add",
+      title: "",
+      tasks: this.taskList,
     };
   },
   methods: {
-    addTask() {},
+    addTask() {
+      this.tasks.push({
+        id: 4,
+        title: this.title,
+        completed: false,
+      });
+    },
   },
 };
 </script>

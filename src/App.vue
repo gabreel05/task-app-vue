@@ -2,7 +2,7 @@
   <div id="app">
     <AppHeader />
     <AppButton :textButton="textButton" :clickButton="addTask" />
-    <AddTaskForm :isShown="isShown" />
+    <AddTaskForm :isShown="isShown" :taskList="tasks" />
     <AppTasks :tasks="tasks" :isShown="!isShown" />
   </div>
 </template>
